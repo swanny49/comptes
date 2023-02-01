@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [persons, setPersons] = useState([])
+
+    useEffect(() => {
+        fetch('/persons')
+
+            .then(datas => {
+                let copy = [...persons]
+                for (let i = 0; i < datas.length; i++) {
+                    let person = {
+                        Name: datas[i].Name,
+                        FirstName: datas[i].FirstName
+                    }
+                    copy.push(person)
+                }
+                setPersons(copy)
+            })
+    }, [])
+
+    return (
+        <div>
+            {(typeof persons === 'undefined') ? (
+                <p>Loading...</p>
+            ) : (
+                persons.map((user, i) => (
+                    <div key={i}>
+                        <p>{user.Name}  {user.FirstName}</p>
+                        <p></p>
+                    </div>
+                ))
+            )}
+        </div>
+    )
 }
 
-export default App;
+export default App

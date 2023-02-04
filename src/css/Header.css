@@ -1,0 +1,23 @@
+@import "index.css";
+
+#header{
+    /*padding: 2rem;*/
+}
+
+#header {
+    background-color: var(--couleur-grey);
+    /*opacity: 40%;*/
+}
+
+#header li{
+    display: inline;
+    margin-left: 7px;
+    padding: 5px;
+    border: red 1px solid;
+    /*float: left;*/
+}
+
+#header li:hover{
+    background-color: var(--couleur-main-rouge);
+    color: blue;
+}

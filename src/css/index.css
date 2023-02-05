@@ -1,20 +1,26 @@
-:root{
-  --couleur-main-verte : #1DD3B0;
-  --couleur-clair-vert : #91D050;
-  --couleur-main-rouge : #D40505;
-  --couleur-grey : #A4A3A3;
-  --couleur-dark-grey : #40375A;
+:root {
+    --couleur-main-verte: #1DD3B0;
+    --couleur-clair-vert: #91D050;
+    --couleur-main-rouge: #D40505;
+    --couleur-grey: #A4A3A3;
+    --couleur-dark-grey: #40375A;
 
-  font-family: 'Inter', serif, Arial;
+    font-family: 'Inter', serif, Arial;
 }
 
+/*@media (prefers-color-scheme: dark) {*/
+/*    body{*/
+/*        background-color: ;*/
+/*    }*/
+/*}*/
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*code {*/
@@ -22,21 +28,88 @@ body {
 /*    monospace;*/
 /*}*/
 
-.button{
 
-  margin: 5px;
-  background-color: var(--couleur-main-verte);
-  padding: 10px 15px 10px 15px;
-  max-width: 150px;
-  text-align: center;
-  border-radius: 8px;
-  color: white;
-  position: relative;
-cursor: pointer;
+/* ----------BUTTONS----------*/
+.button {
+    margin: 10px;
+    /*margin-inside: auto;*/
+    display: inline-block;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
 }
 
-.button:hover{
-  background-color: white;
-  color: var(--couleur-main-verte);
-  border: var(--couleur-main-verte) 1px solid;
+.button.green{
+    background-color: var(--couleur-main-verte);
+}
+
+.button.red{
+    background-color: var(--couleur-main-rouge);
+}
+
+.button .texte {
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-top: 13px;
+    text-align: left;
+}
+
+.button.green:hover {
+    background-color: white;
+    color: var(--couleur-main-verte);
+    border: var(--couleur-main-verte) 1px solid;
+}
+
+.button.red:hover {
+    background-color: white;
+    color: var(--couleur-main-rouge);
+    border: var(--couleur-main-rouge) 1px solid;
+}
+
+.logo {
+    position: fixed;
+    width: 49px;
+    height: 49px;
+    background-position: center;
+    /*border: red 1px solid;*/
+}
+
+.logo.add {
+    content: url("../img/add.png");
+    background-repeat: no-repeat;
+    border-radius: 50px;
+}
+
+.logo.modify {
+    content: url("../img/modified_blank.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.logo.delete {
+    content: url("../img/delete_blank.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.button:hover .logo.add {
+    content: url("../img/add_blanc.png");
+    background-repeat: no-repeat;
+}
+
+.button:hover .logo.delete {
+    content: url("../img/delete_red.png");
+    background-repeat: no-repeat;
+}
+
+.button:hover .logo.modify {
+    content: url("../img/modified_green.png");
+    background-repeat: no-repeat;
 }

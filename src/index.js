@@ -3,14 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './css/index.css';
 import '../src/css/Header.css'
 import reportWebVitals from './reportWebVitals';
-import ElementTest from "./Pages/ElementTest";
 import App from "./App";
 
 // const header = ReactDOM.createRoot(document.getElementById('header'));
-const testElement = ReactDOM.createRoot(document.getElementById('element_test'));
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-testElement.render(<ElementTest />);
 root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function

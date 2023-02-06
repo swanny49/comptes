@@ -1,6 +1,6 @@
 import {useEffect, useId, useState} from "react";
-import {Link, Redirect, Route, Switch} from "react-router-dom";
 import PropTypes from "prop-types";
+import "../css/index.css"
 
 async function loginUser(credentials) {
     // console.log('credentials : ' + JSON.stringify(credentials))
@@ -41,22 +41,34 @@ function LogIn({setToken}) {
 
     //  Render
     return (
-        <div>
+        <div id="Login">
             <h1>Application de comptes</h1>
             {/*<Link to="/register">Pas encore de comptes ?</Link>*/}
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" placeholder="Votre adresse mail" onChange={e => setUsername(e.target.value)}/>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" placeholder="Votre mot de passe"
-                           onChange={e => setPassword(e.target.value)}/>
-                </label>
-                <button>Me connecter</button>
-            </form>
-            <p id="connexion-failed">L'utilisateur n'existe pas, veuillez réessayer</p>
+            <div id="formulaire">
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <input id="email" type="text" placeholder="Votre adresse mail"
+                               onChange={e => setUsername(e.target.value)}/>
+                    </div>
+                    <div>
+                        <input id="password" type="password" placeholder="Votre mot de passe"
+                               onChange={e => setPassword(e.target.value)}/>
+                    </div>
+                    <div>
+                        <div>
+                            <input id="remindme" type="checkbox"/>
+                            <p>Se souvenir de moi</p>
+                        </div>
+                        <div className="button green">
+                            <input type="submit" hidden/>
+                            <div className="confirm">Me connecter</div>
+                        </div>
+
+                    </div>
+                    {/*<input type="submit" value="Me connecter"/>*/}
+                </form>
+                <p id="connexion-failed" className="error">L'utilisateur n'existe pas, veuillez réessayer</p>
+            </div>
         </div>
     )
 

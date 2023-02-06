@@ -3,9 +3,16 @@
     --couleur-clair-vert: #91D050;
     --couleur-main-rouge: #D40505;
     --couleur-grey: #A4A3A3;
+    --couleur-grey-light: #F5F5F5;
     --couleur-dark-grey: #40375A;
 
     font-family: 'Inter', serif, Arial;
+    font-size: 18px;
+}
+
+::selection{
+    background-color: var(--couleur-main-verte);
+    color: white;
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -29,10 +36,51 @@ body {
 /*}*/
 
 
+/* ----------Error----------*/
+.error{
+    color: var(--couleur-main-rouge);
+    font-size: 20px;
+}
+
+/* ----------Login----------*/
+
+#Login {
+    text-align: center;
+    margin-top: 15%;
+}
+
+#Login #formulaire{
+
+}
+
+#Login input{
+    width: 400px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: var(--couleur-grey-light);
+    border: var(--couleur-main-verte) 1px solid;
+}
+
+#Login input::placeholder
+, #Login input[type="text"]
+, #Login input[type="password"]{
+    padding-left: 20px;
+    color: var(--couleur-main-verte);
+    font-size: 18px;
+}
+
+#Login h1{
+    color: var(--couleur-main-verte);
+    font-size: 40px;
+}
+
+
 /* ----------BUTTONS----------*/
+
 .button {
     margin: 10px;
-    /*margin-inside: auto;*/
     display: inline-block;
     height: 50px;
     border-radius: 50px;
@@ -40,11 +88,11 @@ body {
     cursor: pointer;
 }
 
-.button.green{
+.button.green {
     background-color: var(--couleur-main-verte);
 }
 
-.button.red{
+.button.red {
     background-color: var(--couleur-main-rouge);
 }
 
@@ -53,6 +101,12 @@ body {
     margin-right: 10px;
     padding-top: 13px;
     text-align: left;
+}
+
+.confirm{
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 13px;
 }
 
 .button.green:hover {
@@ -68,11 +122,11 @@ body {
 }
 
 .logo {
+    margin-right: 10px;
     position: fixed;
     width: 49px;
     height: 49px;
     background-position: center;
-    /*border: red 1px solid;*/
 }
 
 .logo.add {

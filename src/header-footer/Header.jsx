@@ -11,7 +11,7 @@ import Register from "../Pages/Register";
 import ElementTest from "../Pages/ElementTest";
 import Error404 from "./Error404";
 import useToken from "../useToken";
-
+ 
 const logOut = () => {
     localStorage.removeItem('token')
     return (useToken())
